@@ -6,5 +6,5 @@ Chrome is one of the most complex pieces of modern software, integrating an exte
 
 Being able to obfuscate the core component of chrome (chrome.dll) without breaking it is extremely impressive. We have included our obfuscated version of chrome.dll as well as the original in this repo.
 
-`win64-121.0.6167.85\chrome-win64\chrome.dll` - obfuscated
-`win64-121.0.6167.85\chrome-win64\chrome_original.dll` - non-obfuscated
+- `win64-121.0.6167.85\chrome-win64\chrome.dll` - obfuscated
+- `win64-121.0.6167.85\chrome-win64\chrome_original.dll` - non-obfuscated
