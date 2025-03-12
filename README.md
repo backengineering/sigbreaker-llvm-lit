@@ -35,4 +35,4 @@ You can checkout the docs for [llvm-lit here](https://llvm.org/docs/CommandGuide
 - https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/clang/test
 - https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/lld/test
 
-> There are tons of other tests and subtests for each project. An associate of Back Engineering Labs has worked on the llvm linker (lld) and expressed how complex their lit tests are.
+> There are tons of other tests and subtests for each project. An associate of Back Engineering Labs has worked on the llvm linker (lld) and expressed how complex their lit tests are. You can explore the ELF tests here: https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/lld/test/ELF
