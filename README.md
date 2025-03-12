@@ -23,3 +23,16 @@ cmake -S llvm -B build \
 
 # Open build/LLVM.sln in Visual Studios 2022
 ```
+
+## LLVM-LIT Tests
+
+Each LLVM project comes with its own set of lit tests, designed to verify complex functionality and maintain backward compatibility. This is ideal for our needs, as these tests cover a vast portion of the executable paths within our obfuscated binaries. A huge thanks to LLVM for providing such extensive test coverage!
+
+You can checkout the docs for [llvm-lit here](https://llvm.org/docs/CommandGuide/lit.html)
+
+- https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/bolt/test
+- https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/llvm/test
+- https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/clang/test
+- https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/lld/test
+
+There are tons of other tests and subtests for each project.
