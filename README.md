@@ -1,10 +1,10 @@
-# cd-llvm-lit
+# CodeDefender - LLVM LIT
 
 This repository provides a reproducible way to demonstrate CodeDefender’s stability and performance under extreme conditions. The binaries here are obfuscated to the absolute maximum—applying every available obfuscation feature with multiple iterations.
 
 These binaries do not represent the typical output of our obfuscator. Instead, they showcase that even under insane levels of obfuscation, CodeDefender remains stable and performant. Every possible function within these binaries has been obfuscated to its fullest extent.
 
-### Setup
+## Setup
 
 Requirements:
 
@@ -35,4 +35,4 @@ You can checkout the docs for [llvm-lit here](https://llvm.org/docs/CommandGuide
 - https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/clang/test
 - https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/lld/test
 
-There are tons of other tests and subtests for each project.
+> There are tons of other tests and subtests for each project. An associate of Back Engineering Labs has worked on the llvm linker (lld) and expressed how complex their lit tests are.
