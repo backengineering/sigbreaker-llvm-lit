@@ -14,7 +14,7 @@ Requirements:
 - Python 3.x (> 3.8)
 
 ```sh
-git clone --recursive -b tags/llvmorg-20.1.0 https://github.com/llvm/llvm-project.git
+git clone --recursive -b llvmorg-20.1.0 https://github.com/llvm/llvm-project.git
 cd llvm-project
 cmake -S llvm -B build \
     -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;lld;lldb;polly;bolt;mlir;openmp" \
