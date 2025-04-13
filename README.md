@@ -1,8 +1,11 @@
 # CodeDefender - LLVM LIT
 
-This repository provides a reproducible way to demonstrate CodeDefender’s stability and performance under extreme conditions. The binaries here are obfuscated to the absolute maximum—applying every available obfuscation feature with multiple iterations.
+This repository offers a reproducible setup for evaluating CodeDefender’s stability and performance across various scenarios. Each ZIP archive includes a distinct set of binaries tailored for specific testing conditions:
 
-These binaries do not represent the typical output of our obfuscator. Instead, they showcase that even under insane levels of obfuscation, CodeDefender remains stable and performant. Every possible function within these binaries has been obfuscated to its fullest extent.
+- `original.zip` contains the original llvm compiled binaries for `clang` and `lld` lit tests
+- `rewrite.zip` contains rewritten binaries (no obfuscation)
+- `recompiled.zip` contains recompiled binaries (no obfuscation)
+- `sigbreaker-1.0.zip` contains `SigBreaker 1.0` scrambled binaries
 
 ## Setup
 
@@ -13,7 +16,10 @@ Requirements:
 - cmake
 - Python 3.x (> 3.8)
 
+### Run Tests
+
 ```sh
+# Run this in a powershell!
 git clone --recursive -b llvmorg-20.1.0 https://github.com/llvm/llvm-project.git
 cd llvm-project
 cmake -S llvm -B build \
@@ -21,7 +27,18 @@ cmake -S llvm -B build \
     -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind;compiler-rt" \
     -DCMAKE_BUILD_TYPE=Release
 
-# Open build/LLVM.sln in Visual Studios 2022
+# Unzip the original binaries into the build folder
+Expand-Archive -Path "../original.zip" -DestinationPath "./build/Release/bin/" -Force
+cd "./build/Release/bin/"
+
+#
+# Run the original binaries to get baseline test results
+#
+
+# Run clang lit tests
+python llvm-lit.py ../../../clang/test/ > original-clang-lit-results.txt
+# Run lld lit tests
+python llvm-lit.py ../../../lld/test/ > original-lld-lit-results.txt
 ```
 
 ## LLVM-LIT Tests
@@ -30,7 +47,6 @@ Each LLVM project comes with its own set of lit tests, designed to verify comple
 
 You can checkout the docs for [llvm-lit here](https://llvm.org/docs/CommandGuide/lit.html)
 
-- https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/bolt/test
 - https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/llvm/test
 - https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/clang/test
 - https://github.com/llvm/llvm-project/tree/llvmorg-20.1.0/lld/test
