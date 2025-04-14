@@ -5,7 +5,8 @@ This repository offers a reproducible setup for evaluating SigBreaker's stabilit
 - `original.zip` contains the original llvm compiled binaries for `clang` and `lld` lit tests
 - `sigbreaker-1.0.zip` contains `SigBreaker 1.0` scrambled binaries
 
-***All binaries are modified to their fullest***
+> No debug information was used to transform these files
+and all binaries are scrambled to their fullest
 
 ### Test Results
 
