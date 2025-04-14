@@ -1,10 +1,8 @@
-# CodeDefender - LLVM LIT
+# SigBreaker - LLVM LIT
 
-This repository offers a reproducible setup for evaluating CodeDefender’s stability and performance across various scenarios. Each ZIP archive includes a distinct set of binaries tailored for specific testing conditions:
+This repository offers a reproducible setup for evaluating SigBreaker's stability and performance across various scenarios. Each ZIP archive includes a distinct set of binaries tailored for specific testing conditions:
 
 - `original.zip` contains the original llvm compiled binaries for `clang` and `lld` lit tests
-- `rewrite.zip` contains rewritten binaries (no obfuscation)
-- `recompiled.zip` contains recompiled binaries (no obfuscation)
 - `sigbreaker-1.0.zip` contains `SigBreaker 1.0` scrambled binaries
 
 ## Setup
@@ -39,6 +37,17 @@ cd "./build/Release/bin/"
 python llvm-lit.py ../../../clang/test/ > original-clang-lit-results.txt
 # Run lld lit tests
 python llvm-lit.py ../../../lld/test/ > original-lld-lit-results.txt
+
+#
+# Run any of the other tests
+#
+
+Expand-Archive -Path "../../../../[zip file name here].zip" -DestinationPath . -Force
+
+# Run clang lit tests
+python llvm-lit.py ../../../clang/test/ > altered-clang-lit-results.txt
+# Run lld lit tests
+python llvm-lit.py ../../../lld/test/ > altered-lld-lit-results.txt
 ```
 
 ## LLVM-LIT Tests
