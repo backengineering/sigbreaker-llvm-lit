@@ -5,6 +5,66 @@ This repository offers a reproducible setup for evaluating SigBreaker's stabilit
 - `original.zip` contains the original llvm compiled binaries for `clang` and `lld` lit tests
 - `sigbreaker-1.0.zip` contains `SigBreaker 1.0` scrambled binaries
 
+***All binaries are modified to their fullest***
+
+### Test Results
+
+100% of the LLVM binaries are ran through SigBreaker and tests pass the same for both clang and lld. Your baseline test results may differ, but the the SigBreaker binaries should result in the same test results as baseline! Some of the LLVM tests fail by default as you can see the original binaries result in some failures.
+
+#### LLD Tests
+
+- Original, unmodified llvm binaries
+
+```
+Testing Time: 19.15s
+
+Total Discovered Tests: 3040
+  Unsupported      :   67 (2.20%)
+  Passed           : 2489 (81.88%)
+  Expectedly Failed:    1 (0.03%)
+  Failed           :  483 (15.89%)
+```
+
+- SigBreaker-1.0
+
+```
+Testing Time: 20.77s
+
+Total Discovered Tests: 3040
+  Unsupported      :   67 (2.20%)
+  Passed           : 2489 (81.88%)
+  Expectedly Failed:    1 (0.03%)
+  Failed           :  483 (15.89%)
+```
+
+#### Clang Tests
+
+- Original, unmodified llvm binaries
+
+```
+Testing Time: 170.17s
+
+Total Discovered Tests: 46200
+  Skipped          :     8 (0.02%)
+  Unsupported      :   318 (0.69%)
+  Passed           : 45142 (97.71%)
+  Expectedly Failed:    38 (0.08%)
+  Failed           :   694 (1.50%)
+```
+
+- SigBreaker-1.0
+
+```
+Testing Time: 204.46s
+
+Total Discovered Tests: 46200
+  Skipped          :     8 (0.02%)
+  Unsupported      :   318 (0.69%)
+  Passed           : 45142 (97.71%)
+  Expectedly Failed:    38 (0.08%)
+  Failed           :   694 (1.50%)
+```
+
 ## Setup
 
 Requirements:
